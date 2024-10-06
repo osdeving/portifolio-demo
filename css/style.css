@@ -1,14 +1,25 @@
 :root {
-    --primary-color: #7180AC;
+    --background: #090809;
+    --text-color: #FFF;
+    --shadow-light: var(--primary-color);
+
+    
+    /* --primary-color: #7180AC;
     --secondary-color: #2B4570;
     --tertiary-color: #A8D0DB;
     --quaternary-color: #E49273;
-    --quinary-color: #A37A74;
-    --text-color: #FFF;
+    --quinary-color: #A37A74; */
+   
+
+    --primary-color: #f5f5af;
+    --secondary-color: #F40000;
+    --tertiary-color: #F44E3F;
+    --quaternary-color: #F4796B;
+    --quinary-color: #F4998D;
 }
 
 header {
-    background-color: var(--primary-color);
+    background-color: var(--background);
 }
 
 nav {
@@ -36,24 +47,18 @@ nav a:not(:first-child):not(:last-child)::before {
     width: 10px;
     height: 10px;
     margin-right: 10px;
-    background-color: var(--quinary-color);
+    background-color: var(--secondary-color);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Quando o link for pairado */
 nav a:not(:first-child):not(:last-child):hover::before {
-    background-color: var(--quaternary-color); /* Nova cor ao pairar */
-    transform: translateY(-5px); /* Elevação suave */
+    transform: translateY(-5px);
 }
 
-nav a:not(last-child):not(fist-child):hover {
-    transform: translateY(-5px); 
-    color: var(--secondary-color); /* Nova cor ao pairar */
+nav a:not(:last-child):not(:first-child):hover {
+    color: var(--primary-color);
 }
 
-/* nav a:not(:first-child):hover {
-    color: var(--tertiary-color); 
-} */
 
 .nav__link--avatar {
     position: relative;
@@ -66,6 +71,17 @@ nav a:not(last-child):not(fist-child):hover {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.nav__link--avatar:hover .link__img--avatar {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 5px var(--primary-color); 
+}
+
+.nav__link--avatar:hover .link__icon--new-tab {
+    transform: scale(1.5);
+    opacity: 1;
 }
 
 .link__icon--new-tab {
@@ -73,21 +89,22 @@ nav a:not(last-child):not(fist-child):hover {
     top: 36px;
     left: 36px;
     font-size: 1rem;
-    background-color: opacity(white, .5);
+    background-color: opacity(var(--text-color), .5);
 }
 
 .nav__button--download {
-    background-color: var(--quinary-color);
+    background-color: var(--secondary-color);
     height: 60px;
     line-height: 60px;
     padding-left: 20px;
     padding-right: 20px;
-    box-shadow: 5px 5px 0 black;
+    box-shadow: 5px 5px 5px var(--shadow-light);  
+
     transition: all 0.2s ease;
 }
 
 .nav__button--download:hover {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra reduzida para parecer pressionado */
-    transform: translateY(4px); /* Movimento para baixo simulando pressão */
-    color: var(--secondary-color); /* Nova cor ao pairar */
+    box-shadow: none;
+    transform: translateY(5px);
+    background-color: var(--tertiary-color);
 }
