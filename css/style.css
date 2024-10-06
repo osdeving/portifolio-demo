@@ -1,28 +1,68 @@
-header {
-    background-color: #7C5E99;
+:root {
+    --primary-color: #7180AC;
+    --secondary-color: #2B4570;
+    --tertiary-color: #A8D0DB;
+    --quaternary-color: #E49273;
+    --quinary-color: #A37A74;
+    --text-color: #FFF;
 }
 
-a {
-    color: #FFF;
-    font-size: 20px;
-    font-family: "Fira Code", Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    text-decoration: none;
-    margin-right: 30px;
+header {
+    background-color: var(--primary-color);
 }
 
 nav {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    gap: 30px;
+    margin-bottom: 10px;
 }
+
+nav a {
+    color: var(--text-color);
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Fira Code", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 5px;
+    margin-bottom: 10px;
+}
+
+nav a:not(:first-child):not(:last-child)::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    background-color: var(--quinary-color);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Quando o link for pairado */
+nav a:not(:first-child):not(:last-child):hover::before {
+    background-color: var(--quaternary-color); /* Nova cor ao pairar */
+    transform: translateY(-5px); /* Elevação suave */
+}
+
+nav a:not(last-child):not(fist-child):hover {
+    transform: translateY(-5px); 
+    color: var(--secondary-color); /* Nova cor ao pairar */
+}
+
+/* nav a:not(:first-child):hover {
+    color: var(--tertiary-color); 
+} */
 
 .nav__link--avatar {
     position: relative;
-    display: inline-block;
+    display: block;
+    margin-right: auto;
 }
 
 .link__img--avatar {
-    display: block;
+    display: inline-block;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -30,18 +70,24 @@ nav {
 
 .link__icon--new-tab {
     position: absolute;
-    top: 34px;
-    left: 34px;
+    top: 36px;
+    left: 36px;
     font-size: 1rem;
     background-color: opacity(white, .5);
 }
 
 .nav__button--download {
-    display: inline-block;
-    background-color: #F25A70;
+    background-color: var(--quinary-color);
     height: 60px;
     line-height: 60px;
     padding-left: 20px;
     padding-right: 20px;
     box-shadow: 5px 5px 0 black;
+    transition: all 0.2s ease;
+}
+
+.nav__button--download:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra reduzida para parecer pressionado */
+    transform: translateY(4px); /* Movimento para baixo simulando pressão */
+    color: var(--secondary-color); /* Nova cor ao pairar */
 }
