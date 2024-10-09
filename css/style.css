@@ -4,19 +4,29 @@
     --shadow-light: var(--primary-color);
 
     
-    /* --primary-color: #7180AC;
+    --primary-color: #7180AC;
     --secondary-color: #2B4570;
     --tertiary-color: #A8D0DB;
     --quaternary-color: #E49273;
-    --quinary-color: #A37A74; */
+    --quinary-color: #A37A74;
    
 
+    /* --primary-color: #f5f5af;
+    --secondary-color: #F40000;
+    --tertiary-color: #F44E3F;
+    --quaternary-color: #F4796B;
+    --quinary-color: #F4998D; */
+}
+
+body.dark-theme {
     --primary-color: #f5f5af;
     --secondary-color: #F40000;
     --tertiary-color: #F44E3F;
     --quaternary-color: #F4796B;
-    --quinary-color: #F4998D;
+    --quinary-color: #F4998D; 
 }
+
+
 
 header {
     background-color: var(--background);
@@ -27,7 +37,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     gap: 30px;
-    margin-bottom: 10px;
 }
 
 nav a {
@@ -92,7 +101,70 @@ nav a:not(:last-child):not(:first-child):hover {
     background-color: opacity(var(--text-color), .5);
 }
 
-.nav__button--download {
+
+
+main {
+    background-image: url("../assets/img/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    height: 100vh;
+    background-color: var(--background);
+}
+
+.main__profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    margin-top: 200px;
+    width: 600px;
+    height: 300px;
+    box-shadow: 10px 10px 0px var(--shadow-light);
+}
+
+.main__profile--name {
+    color: var(--quinary-color);
+    font-size: 40px;
+    font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    text-align: center;
+    text-shadow: 4px 4px 1px var(--text-color);
+}
+
+.main__profile--hole {
+    color: var(--quaternary-color);
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.main__buttons-container {
+    display: flex;
+    gap: 30px;
+    color: var(--text-color);
+    font-size: 20px;
+    font-family: "Fira Code", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.main__buttons-container--download {
     background-color: var(--secondary-color);
     height: 60px;
     line-height: 60px;
@@ -100,11 +172,16 @@ nav a:not(:last-child):not(:first-child):hover {
     padding-right: 20px;
     box-shadow: 5px 5px 5px var(--shadow-light);  
 
-    transition: all 0.2s ease;
+    transition: transform 200ms linear;
 }
 
-.nav__button--download:hover {
-    box-shadow: none;
-    transform: translateY(5px);
-    background-color: var(--tertiary-color);
+.main__buttons-container--contatos {
+    background-color: var(--secondary-color);
+    height: 60px;
+    line-height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 5px 5px 5px var(--shadow-light);  
+
+    transition: transform 200ms linear;
 }

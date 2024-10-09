@@ -4,12 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portifólio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components/button.css">
 
   </head>
-  <body>
+  <body >
     <header>
         <nav>
             <a class="nav__link--avatar" href="https://github.com/osdeving" title="Abre o Github em nova aba" target="_blank" rel="noopener noreferrer">
@@ -22,9 +27,22 @@
             <a href="#">Projetos</a>
             <a href="#">Sobre</a>
             <a href="#">Contatos</a>
-            <a class="nav__button--download" href="#" lang="en">Download CV</a>
+            <a class="button nav__button--download" href="#" lang="en">Download CV</a>
         </nav>
     </header>
-    
+    <main>
+        <section>
+            <div class="main__profile">
+                <h1 class="main__profile--name">Willams Sousa</h1>
+                <h2 class="main__profile--hole">Desenvolvedor Fullcycle</h2>
+            </div>
+        </section>
+        <section>
+            <div class="main__buttons-container">
+                <a class="button" href="#" lang="en">Download CV</a>
+                <a class="button" href="#">Contantos</a>
+            </div>
+        </section>
+    </main>
   </body>
 </html>
